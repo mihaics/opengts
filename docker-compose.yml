@@ -1,0 +1,35 @@
+version: '2'
+services:
+ opengts:
+  build: ../opengts
+  container_name: opengts
+  image: mcsaky/opengts
+  ports:
+   - 8080:8080
+  environment:
+   - MYSQL_ROOT_PASSWORD=mysqlroot
+   - MYSQL_DBNAME=gts
+   - MYSQL_DBPASS=opengts
+   - MYSQL_DBUSER=gts
+   - CREATE_DATABASE=true
+   - SYSADMIN_PASSWORD=sysadmin
+   - MYSQL_SERVICE_HOST=mysql
+  cpu_shares: 50
+  cpuset: 0,1
+  mem_limit: 2048m
+ mysql:
+  build: ../sysop-mysql
+  container_name: mysql
+  image: mcsaky/sysop-mysql
+  ports:
+   - 3306:3306
+  environment:
+   - MYSQL_ROOT_PASSWORD=mysqlroot
+   - MYSQL_DBNAME=gts
+   - MYSQL_DBPASS=opengts
+   - MYSQL_DBUSER=gts
+   - CREATE_DATABASE=true
+  cpu_shares: 50
+  cpuset: 0,1
+  mem_limit: 1024m
+
