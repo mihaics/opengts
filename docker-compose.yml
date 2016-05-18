@@ -1,7 +1,7 @@
 version: '2'
 services:
  opengts:
-  build: ../opengts
+#  build: ../opengts
   container_name: opengts
   image: mcsaky/opengts
   ports:
@@ -18,7 +18,7 @@ services:
   cpuset: 0,1
   mem_limit: 2048m
  mysql:
-  build: ../sysop-mysql
+#  build: ../sysop-mysql
   container_name: mysql
   image: mcsaky/sysop-mysql
   ports:
