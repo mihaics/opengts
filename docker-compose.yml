@@ -14,9 +14,9 @@ services:
    - CREATE_DATABASE=true
    - SYSADMIN_PASSWORD=sysadmin
    - MYSQL_SERVICE_HOST=mysql
-  cpu_shares: 50
-  cpuset: 0,1
-  mem_limit: 2048m
+#  cpu_shares: 50
+#  cpuset: 0,1
+#  mem_limit: 2048m
  mysql:
 #  build: ../sysop-mysql
   container_name: mysql
@@ -29,7 +29,7 @@ services:
    - MYSQL_DBPASS=opengts
    - MYSQL_DBUSER=gts
    - CREATE_DATABASE=true
-  cpu_shares: 50
-  cpuset: 0,1
-  mem_limit: 1024m
+#  cpu_shares: 50
+#  cpuset: 0,1
+#  mem_limit: 1024m
 

@@ -16,7 +16,12 @@ cd $GTS_HOME; ant all
 cp $GTS_HOME/build/*.war $CATALINA_HOME/webapps/
 
 #update database
-bin/dbAdmin.pl -user=gts -tables=tca
+until
+    bin/dbAdmin.pl -user=gts -tables=tca
+do
+ printf "."
+ sleep 20
+done
 # create sysadmin account
 $GTS_HOME/bin/admin.pl Account -account=sysadmin -pass=$SYSADMIN_PASSWORD -create;
 
