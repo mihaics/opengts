@@ -136,17 +136,16 @@ FuelRegister.levelDecreaseThreshold=0.30
 #Account.smsEnabled=true
 
 # --- default timezone
-Account.defaultTimeZone=Europe/Bucharest
-
+Account.defaultTimeZone={{ACCOUNT_DEFAULTTIMEZONE | default('Europe/Bucharest')}}
 # --- default currency/symbol
-Account.defaultCurrency=lei
-Account.defaultCurrencySymbol=RON
+Account.defaultCurrency={{ACCOUNT_DEFAULTCURRENCY | default('lei')}}
+Account.defaultCurrencySymbol={{ACCOUNT_DEFAULTCURRENCYSYMBOL | default('RON')}}
 
 # --- always allowWebService for all Accounts
 #Account.alwaysAllowWebService=true
-Account.default.speedUnits=1
-Account.default.distanceUnits=1
-Account.default.volumeUnits=1
+Account.default.speedUnits={{ACCOUNT_DEFAULT_SPEEDUNITS | default('1')}}
+Account.default.distanceUnits={{ACCOUNT_DEFAULT_DISTANCEUNITS | default('1')}}
+Account.default.volumeUnits={{ACCOUNT_DEFAULT_VOLUMEUNITS | default('1')}}
 # -----------------------------------------------------------------------------
 # --- DeviceGroup table properties
 
@@ -312,7 +311,7 @@ Device.checkLastOdometer=true
 
 # --- private.xml: Domain attributes
 Domain.demo=false
-Domain.locale=ro
+Domain.locale={{DOMAIN_LOCALE | default('ro')}}
 #Domain.accountLogin=true
 #Domain.userLogin=true
 Domain.emailLogin=true
